@@ -37,8 +37,8 @@ class BasicProject extends StatelessWidget {
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
-              ), //TextStyle
-            ), //Text
+              ),
+            ),
             SizedBox(height: 10.0,),//adding space between two widgets
             Text(
               'Fatima',
@@ -47,16 +47,16 @@ class BasicProject extends StatelessWidget {
                 letterSpacing: 2.0,
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold
-              ), //TextStyle
-            ), //Text
+              ),
+            ),
             SizedBox(height: 30.0,),
             Text(
               'Your Level',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
-              ), //TextStyle
-            ), //Text
+              ),
+            ),
             SizedBox(height: 10.0,),//adding space between two widgets
             Text(
               '7',
@@ -65,15 +65,15 @@ class BasicProject extends StatelessWidget {
                   letterSpacing: 2.0,
                   fontSize: 28.0,
                   fontWeight: FontWeight.bold
-              ), //TextStyle
-            ), //Text
+              ),
+            ),
             SizedBox(height: 30.0,),
             Row(
               children: < Widget>[
                 Icon(
                   Icons.email,
                   color: Colors.grey[300]
-                ),// Icon
+                ),
                 SizedBox(width: 10.0),
                 Text(
                   'fatimabittar0tec@gmail.com',
@@ -83,11 +83,15 @@ class BasicProject extends StatelessWidget {
                     letterSpacing: 1.0
                   ),
                 )
-              ], //Widget[]
-            )//Row
-          ], //Widget[]
-        ),//Column
-      ),//Padding
-    ); //Scaffold
+              ],
+            ),
+            Divider(
+              height: 40.0,
+              color: Colors.grey[800],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

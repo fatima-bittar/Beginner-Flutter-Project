@@ -14,7 +14,7 @@ class BasicProject extends StatelessWidget {
       appBar: AppBar(
         title: Text('Basic project card'),
         centerTitle: true,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey[500],
         elevation: 0.0,
       ),
       body: Padding(
@@ -22,6 +22,16 @@ class BasicProject extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/animated.jpg'),
+                radius: 40.0,
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.grey[800],
+            ),
             Text(
               'Name',
               style: TextStyle(

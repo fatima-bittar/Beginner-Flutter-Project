@@ -58,6 +58,23 @@ class BasicProject extends StatelessWidget {
               ), //TextStyle
             ), //Text
             SizedBox(height: 30.0,),
+            Row(
+              children: < Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[300]
+                ),// Icon
+                SizedBox(width: 10.0),
+                Text(
+                  'fatimabittar0tec@gmail.com',
+                  style: TextStyle(
+                    color: Colors.grey[300],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0
+                  ),
+                )
+              ], //Widget[]
+            )//Row
           ], //Widget[]
         ),//Column
       ),//Padding

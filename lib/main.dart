@@ -13,6 +13,7 @@ class BasicProject extends StatefulWidget {
 
 class _BasicProjectState extends State<BasicProject> {
   int level =0;
+  List<String> skills =['Flutter', 'React js', 'Node js'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,15 +24,36 @@ class _BasicProjectState extends State<BasicProject> {
         backgroundColor: Colors.grey[500],
         elevation: 0.0,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-          level+=1;
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.grey[700],
+      floatingActionButton: Row (
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(40.0),
+            child:
+            FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  level+=1;
+                });
+              },
 
+              child: Icon(Icons.add),
+              backgroundColor: Colors.grey[700],
+            ),
+            ),
+
+          // SizedBox(width:10),
+          FloatingActionButton(
+              onPressed: (){
+                setState(() {
+                  if (level>0)
+                    level -=1;
+                });
+              },
+              child: Icon(Icons.remove),
+              backgroundColor: Colors.grey[700],
+          ),
+        ]
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -105,6 +127,24 @@ class _BasicProjectState extends State<BasicProject> {
               height: 40.0,
               color: Colors.grey[800],
             ),
+            Row(
+              children: [
+                Column(
+                  children: skills.map((skill){
+                    return Card(
+                      margin: EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text (
+                          skill,
+                          style: TextStyle(fontSize: 18.0, color: Colors.grey[700]),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ],
+            )
           ],
         ),
       ),

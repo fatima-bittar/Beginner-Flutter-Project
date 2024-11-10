@@ -6,7 +6,13 @@ void main() {
   ));
 }
 
-class BasicProject extends StatelessWidget {
+class BasicProject extends StatefulWidget {
+  @override
+  State<BasicProject> createState() => _BasicProjectState();
+}
+
+class _BasicProjectState extends State<BasicProject> {
+  int level =0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +22,16 @@ class BasicProject extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[500],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+          level+=1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[700],
+
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -59,7 +75,7 @@ class BasicProject extends StatelessWidget {
             ),
             SizedBox(height: 10.0,),//adding space between two widgets
             Text(
-              '7',
+              '$level',
               style: TextStyle(
                   color: Colors.amberAccent[200],
                   letterSpacing: 2.0,
@@ -95,3 +111,4 @@ class BasicProject extends StatelessWidget {
     );
   }
 }
+
